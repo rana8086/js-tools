@@ -1,0 +1,30 @@
+body
+{
+/*id="body"* tag selector*/
+background:#DDD;
+/*
+margin:0;
+padding:0;
+font-family:Arial,FreeSans,Helvetica;
+font-size:12px;
+text-align:left;
+width:100%;
+*/
+}
+/*########### CSS Comment 
+*/
+p
+{
+/*id="para1"* tag selector*/
+font-weight:bold;
+}
+#para1
+{
+/*id="para1"* id selector*/
+color:blue;
+}
+.para2
+{
+/*class="para2"* class selector*/
+color:white;
+}

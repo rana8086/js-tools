@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<style>
+.bodyStyle 
+{
+/*background:#DDD;*/
+margin:0;
+padding:0;
+font-family:Arial,FreeSans,Helvetica;
+font-size:12px;
+text-align:left;
+width:100%;
+}
+
+p
+{
+font-family:Courier New;
+}
+
+#para2
+{
+font-family:Arial Black;
+}
+.divCodeNo129
+{
+opacity:1.0;
+width:auto;
+height:auto;background-color:#40B3DF; margin: 10px 10px 0px 10px; text-align:left;padding: 1px 10px 1px 10px;
+}
+
+.divCodeNo10
+{
+opacity:1.0;width:auto;height:auto;background-color:#40B3DF; margin: 10px 10px 10px 10px; text-align:left;padding: 1px 10px 1px 10px;
+}
+
+.tblCodeAll
+{
+width:100%; opacity:1.0;
+}
+
+.tdCodeAll75
+{
+width:75%;
+}
+</style>
+
+<link rel="stylesheet" type="text/css" href="stylesheet001.css">
+
+</head>
+
+<body class="bodyStyle">
+
+<center>
+<!--<div style="opacity:0.5;position:absolute;left:50px;width:900px;height:100%;background-color:#40B3DF">-->
+<div style="opacity:1.0;width:900px;height:100%;background-color:#FFFFFF;">
+<!-- ################################################################################################## -->
+<div style="opacity:1.0;width:auto;height:1px;background-color:#FFFFFF; margin: 10px 10px 0px 10px; text-align:left;">
+</div>
+<!-- ################################################################################################## -->
+<!--
+<div style="opacity:1.0;width:auto;height:auto;background-color:#40B3DF; margin: 10px 10px 0px 10px; text-align:left;padding: 1px 10px 1px 10px;">
+-->
+
+<div class="divCodeNo129">
+
+<!--
+<table style="width:100%; opacity:1.0;">
+-->
+<table class="tblCodeAll">
+<tr>
+<td class="tdCodeAll75">
+<h2>JavaScript Reference #002</h2>
+<p></p>
+<p></p>
+<p></p>
+</td>
+<td >
+<button type="button" onclick="reloadPage()">Reload</button>
+<button type="button" onclick="loadPrevious()">Previous</button>
+<button type="button" onclick="loadNext()">Next</button>
+<script>
+function reloadPage()
+{
+document.location.reload(true);
+alert('Page Reloaded!');
+}
+function loadNext()
+{
+//window.open(URL,name,specs,replace)
+window.open("jsref003.html","_self");
+}
+function loadPrevious()
+{
+//window.open(URL,name,specs,replace)
+window.open("jsref001.html","_self");
+}
+</script>
+</td>
+</tr>
+</table>
+
+</div>
+<!-- ################################################################################################## -->
+<div class="divCodeNo129">
+
+<table class="tblCodeAll">
+<tr>
+<td class="tdCodeAll75">
+<h3 >Ref #011: Conditional Operator - ?</h3>
+<p>variablename=(condition)?value1:value2</p>
+<p>Click the button to check the age.</p>
+Age:<input id="age" value="18"/>
+<p>Old enough to vote?</p>
+<!--<button onclick="checkAge()">Check</button>-->
+<p id="paraAge">&Response</p>
+<script>
+function checkAge()
+{
+//alert('checkAge');
+var age, votable;
+age=document.getElementById("age").value;
+votable=(age<18)?"Too young":"Old enough";
+document.getElementById("paraAge").innerHTML=votable;
+}
+</script>
+</td>
+<td >
+<button onclick="checkAge()">Check Age</button>
+<button type="button" onclick="reloadPage()">Reload/Test</button>
+<script>
+function reloadPage()
+{
+/*
+var carname=new String;
+var x=      new Number;
+var y=      new Boolean;
+var cars=   new Array;
+var person= new Object;
+*/
+/*
+person=new Object();
+person.firstname="John";
+person.lastname="Doe";
+person.age=50;
+person.eyecolor="blue";
+*/
+//var x=002;
+var x;
+//var y= new Number;
+var y;
+//x =null;
+document.location.reload(true);
+//alert('Page Reloaded! (code#'+'000'+x+')'+' "-&"');
+alert('Page Reloaded! (code#'+'000'+y+')'+' "-&"');
+}
+</script>
+</td>
+</tr>
+</table>
+
+</div>
+<!-- ################################################################################################## -->
+<div class="divCodeNo129">
+
+<table class="tblCodeAll">
+<tr>
+<td class="tdCodeAll75">
+<h3 >Ref #012: JavaScript Try and Catch</h3>
+<p></p>
+<p></p>
+<p></p>
+</td>
+<td >
+<input type="button" value="Catch Error" onclick="catchError()"/>
+<script>
+function catchError()
+{
+try
+	{
+	adddlert("No Error! It is working.");
+	//alert("No Error! It is working.");
+	}
+catch(err)
+	{
+	txt="There was an error on this page.\n\n";
+	txt+="Error description: "+err.message+"\n\n";
+	txt+="Click OK to continue.\n\n";
+	alert(txt);
+	}
+
+
+}
+</script>
+</td>
+</tr>
+</table>
+
+</div>
+<!-- ################################################################################################## -->
+<div class="divCodeNo129">
+
+<table class="tblCodeAll">
+<tr>
+<td class="tdCodeAll75">
+<h3 ">Ref #013: The Throw Statement - Create a Custom Error.</h3>
+<p>throw exception</p>
+<p>Please enter a number between 5 and 10:</p>
+<input type="text" id="input13">
+<p id="mess13">&Res</p>
+</td>
+<td >
+<button type="button" onclick="throwEx()">Throw Exception</button>
+<script>
+function throwEx()
+{
+try
+	{
+	var x=document.getElementById("input13").value;
+	if (x=="")    throw "empty";
+	if (isNaN(x)) throw "not a number";
+	if (x>10)     throw "too high";
+	if (x<5)      throw "too low";
+	}
+catch(err13)
+	{
+	var y=document.getElementById("mess13");
+	y.innerHTML="Error: "+ err13 + ".";
+	}
+}
+</script>
+</td>
+</tr>
+</table>
+
+</div>
+
+<!-- ################################################################################################## -->
+<div class="divCodeNo129">
+
+<table class="tblCodeAll">
+<tr>
+<td class="tdCodeAll75">
+<h3 >Ref #014: JavaScript HTML DOM Events</h3>
+<p>HTML DOM(Document Object Model)</p>
+<!--<div onmouseover="mOver(this)" onmouseout="mOut(this)" style="background-color:#D94A38; width:120px; height:20px; padding:40px;">Mouse Over This</div>-->
+<div onmouseover="mOver(this)" onmouseout="mOut(this)" style="background-color:#FFFFFF; width:120px; height:20px; padding:40px;">Mouse Over This</div>
+<p></p>
+<p></p>
+</td>
+<td >
+
+<script>
+function mOver(obj)
+{
+obj.innerHTML="Thanks!";
+}
+function mOut(obj)
+{
+obj.innerHTML="Mouse Over This";
+
+}
+</script>
+</td>
+</tr>
+</table>
+
+</div>
+
+<!-- ################################################################################################## -->
+<div class="divCodeNo129">
+
+<table class="tblCodeAll">
+<tr>
+<td class="tdCodeAll75">
+<h3 >Ref #015: Finding HTML Elements - by id / tag name / class name </h3>
+<p id="para15">This is p id: para15</p>
+<h4>This is tag: h4</h4>
+<p class="pClass15">This is p class: pClass15</p>
+<p id="flag15">Flag:</p>
+</td>
+<td >
+<button type="button" onclick="findById()">Find by Id</button>
+</br></br>
+<button type="button" onclick="findByTagName()">Find by Tag Name</button>
+</br></br>
+<button type="button" onclick="findByClassName()">Find by Class Name</button>
+<!--
+<button type="button" onclick="displayDateAlert()">Date Alert</button>
+-->
+<script>
+
+var flag1=1;
+var flag2=1;
+var flag3=1;
+
+function findById()
+{
+if(flag1==1)
+	{
+	window.document.getElementById("flag15").innerHTML="Flag: "+flag1;
+	var x= window.document.getElementById("para15");
+	x.style.color="red";
+	flag1=2;
+	}
+else
+	{
+	window.document.getElementById("flag15").innerHTML="Flag: "+flag1;
+	var x= window.document.getElementById("para15");
+	x.style.color="black";
+	flag1=1;
+	}
+}
+
+function findByTagName()
+{
+
+
+
+if (flag2==1)
+	{
+	window.document.getElementById("flag15").innerHTML="Flag: "+flag2;
+	var x= window.document.getElementsByTagName("h4");
+	x[0].style.color="red";
+	flag2=2;
+	}
+else
+	{
+	window.document.getElementById("flag15").innerHTML="Flag: "+flag2;
+	var x= window.document.getElementsByTagName("h4");
+	x[0].style.color="black";
+	flag2=1;
+	}
+	
+}
+
+function findByClassName()
+{
+var x= window.document.getElementsByClassName("pClass15");
+x[0].style.color="red";
+
+if(flag3==1)
+	{
+	window.document.getElementById("flag15").innerHTML="Flag: "+flag3;
+	var x= window.document.getElementsByClassName("pClass15");
+    x[0].style.color="red";
+	flag3=2;
+	}
+else
+	{
+	window.document.getElementById("flag15").innerHTML="Flag: "+flag3;
+	var x= window.document.getElementsByClassName("pClass15");
+    x[0].style.color="black";
+	flag3=1;
+	}
+}
+
+</script>
+</td>
+</tr>
+</table>
+
+</div>
+<!-- ################################################################################################## -->
+<div class="divCodeNo129">
+
+<table class="tblCodeAll">
+<tr>
+<td class="tdCodeAll75">
+<h3>Ref #016: JavaScript Arrays</h3>
+<p>
+var cars=new Array();
+cars[0]="Saab";
+cars[1]="Volvo";
+cars[2]="BMW";
+</p>
+<p>var cars=new Array("Saab","Volvo","BMW");</p>
+<p>var cars=["Saab","Volvo","BMW"];</p>
+<p id="para16" class="para2">Array</p>
+</td>
+<td >
+<button type="button" onclick="arrayPrint()">Print Array</button>
+
+<script>
+function arrayPrint()
+{
+//alert("hello");
+var i;
+var cars = new Array();
+cars[0] = "Audi";
+cars[1] = "Jaguar";
+cars[2] = "Land Cruiser";
+window.document.getElementById("para16").innerHTML="";
+for (i=0; i<cars.length; i++)
+	{
+	//document.write(cars[i] + " ");
+	//x+= " " +cars[i];
+	window.document.getElementById("para16").innerHTML+= cars[i]+ " ";
+	}
+}
+
+</script>
+</td>
+</tr>
+</table>
+
+</div>
+<!-- ################################################################################################## -->
+<div class="divCodeNo129">
+
+<table class="tblCodeAll">
+<tr>
+<td class="tdCodeAll75">
+<h3 >Ref #017: The Browser Object Model (BOM)</h3>
+<p  >
+The Window Object: It represents the bowser window. All global JavaScript objects, functions, and variables automatically become members of the window object.Global variables are properties of the window object.
+Global functions are methods of the window object.
+</br>
+Even the document object (of the HTML DOM) is a property of the window object:
+</br>
+window.document.getElementById("header");
+is the same as:
+</br>
+document.getElementById("header");
+
+</p>
+<p></p>
+<p></p>
+</td>
+<td >
+<button type="button" onclick="ReactOnClick()">Call Event</button>
+
+<script>
+function ReactOnClick()
+{
+alert('This alert is a reaction to the click event. It is working.');
+}
+
+</script>
+</td>
+</tr>
+</table>
+
+</div>
+<!-- ################################################################################################## -->
+<div class="divCodeNo129">
+
+<table class="tblCodeAll">
+<tr>
+<td class="tdCodeAll75">
+<h3 >Ref #018: ########################</h3>
+<img id="image1" onclick="changeImage()" src="pic_bulboff.gif" width="25" height="45">
+<p  >
+Click the light bulb to turn on/off the light.
+</p>
+<p></p>
+<p></p>
+</td>
+<td >
+<button type="button" onclick="changeImage()">On/Off</button>
+
+<script>
+function changeImage()
+{
+//alert('pic-pic');
+
+element=document.getElementById('image1');
+if(element.src.match("bulbon"))
+	{
+	element.src="pic_bulboff.gif";
+	}
+else
+	{
+	element.src="pic_bulbon.gif";
+	}
+	
+}
+
+</script>
+</td>
+</tr>
+</table>
+
+</div>
+<!-- ################################################################################################## -->
+<div class="divCodeNo129">
+
+<table class="tblCodeAll">
+<tr>
+<td class="tdCodeAll75">
+<h3 >Ref #019: ########################</h3>
+<p  id="para3">
+JavaScript can change the style of an HTML element.
+</p>
+<p></p>
+<p></p>
+</td>
+<td >
+<button type="button" onclick="changeStyle()">Change Style</button>
+
+<script>
+function changeStyle()
+{
+x=document.getElementById("para3");	// Find the element
+x.style.color="#ff0000";            // Change the style
+}
+</script>
+</td>
+</tr>
+</table>
+
+</div>
+<!-- ################################################################################################## -->
+<div class="divCodeNo10">
+
+<table class="tblCodeAll">
+<tr>
+<td class="tdCodeAll75">
+<h3 >Ref #020: ########################</h3>
+<p>
+Please input a number.
+</p>
+<input id="inputbox1" type="text">
+<p></p>
+<p></p>
+</td>
+<td >
+<button type="button" onclick="validateInput()">Validate</button>
+<script>
+function validateInput()
+{
+var x=document.getElementById("inputbox1");
+var y=x.value;
+//alert(y);
+/* */
+if(y==""||isNaN(y))
+	{
+	alert("Not Numeric");
+	}
+	
+}
+
+</script>
+</td>
+</tr>
+</table>
+
+</div>
+<!-- ################################################################################################## -->
+</div>
+
+</center>
+
+</body>
+
+</html>

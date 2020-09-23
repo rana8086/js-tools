@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script type="text/javascript">
+
+        //window.onresize = resize;
+        window.onload = load;
+		function load() {
+            window.open("jsref001.html","_self");
+            //alert("resize event detected!");
+        }
+</script>
+</head>
+
+<body>
+
+</body>
+
+</html>
